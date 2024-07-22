@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>اطلاعات کاربران</title>
+</head>
+<body>
+    <h1>اطلاعات کاربران</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>نام</th>
+            <th>نام خانوادگی</th>
+            <th>سن</th>
+            <th>ترم</th>
+        </tr>
+        {% for user in users %}
+        <tr>
+            <td>{{ user.id }}</td>
+            <td>{{ user.name }}</td>
+            <td>{{ user.lastname }}</td>
+            <td>{{ user.age }}</td>
+            <td>{{ user.term }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
