@@ -21,6 +21,16 @@ def submit():
     age = request.form['age']
     term = request.form['term']
 
+    errors = {}
+    if not name:
+        errors['name'] = 'pls fill out the field'
+    if not lastname:
+        errors['lastname'] = 'pls fill out the field'
+    if not age:
+        errors['age'] = 'pls fill out the field'
+    if not term:
+        errors['term'] = 'pls fill out the field'
+
     cursor = db.cursor()
     sql = "INSERT INTO users (name, lastname, age, term) VALUES (%s, %s, %s, %s)"
     values = (name, lastname, age, term)
